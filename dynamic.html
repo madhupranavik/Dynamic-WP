@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Registration Form</title>
+    <style>
+        body{
+                font-family: Arial, sans-serif;
+                background-color: rgb(245, 225, 239);
+                padding: 200px;
+            }
+            h1{
+                text-align: center;
+                color: rgb(17, 10, 1);
+            }
+            form{
+                background-color: white;
+                padding: 40px;
+                max-width: 400px;
+                margin: auto;
+                border-radius:20px;
+                box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            }
+            label{
+                display:contents;
+                margin-top: 30px;
+                font-weight: bold;
+            }
+            input[type="text"],
+            input[type="email"],
+            input[type="password"] {
+                width: 100%;
+                padding: 8px;
+                margin-top: 5px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+            input[type="submit"] {
+                background-color: rosybrown;
+                color: white;
+                padding: 10px;
+                margin-top: 15px;
+                border: none;
+                width: 100%;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            input[type="submit"]:hover {
+                background-color: rebeccapurple;
+            }
+            #message {
+                margin-top: 15px;
+                text-align: center;
+                color: rgb(0, 9, 0);
+                font-weight: bold;
+            }
+      </style>
+</head>
+<body>
+    <h1>Registration Form</h1>
+
+  <form id="regForm">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name"><br><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email"><br><br>
+
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password"><br><br>
+
+    <input type="submit" value="Register">
+  </form>
+  <p id="message"></p>
+  <script>
+    const form = document.getElementById("regForm");
+    const message = document.getElementById("message");
+    form.addEventListener("submit", function(e) {
+      e.preventDefault(); 
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      message.innerHTML = "Hello " + name + "! You have registered successfully with email: " + email;
+    });
+  </script>
+</body>
+</html>
